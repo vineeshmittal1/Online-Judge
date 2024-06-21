@@ -2,9 +2,9 @@
 #     Online Coding Judge System
 
 ## Introduction
-Welcome to the Online Coding Judge System! This platform is designed to evaluate programming skills in a robust and scalable manner. It caters to developers, students, and professionals preparing for coding interviews or competitions.
+Welcome to the Online Coding Judge System! The platform is designed to evaluate and enhance your programming skills efficiently and at scale. Whether you're a developer, student, or professional preparing for coding interviews or competitions, our system offers the tools and resources you need to succeed.
 
-## Features [As of what is planned]
+## Features 
 - **User Authentication and Authorization**
   - Sign up, login, and password management.
   - Role-based access control (users, administrators).
@@ -38,7 +38,7 @@ Welcome to the Online Coding Judge System! This platform is designed to evaluate
   - Axios to connect to the API endpoints
 
 - **Backend**:
-  - Technology: Node.js / Flask
+  - Technology: Node.js / Express.js
   - RESTful API for communication with the frontend.
   - Thunder Client to check for the API functioning
   - Authentication: JWT / OAuth2 - Google, Github
@@ -58,11 +58,7 @@ Welcome to the Online Coding Judge System! This platform is designed to evaluate
   - User activity tracking.
   - Performance reports and insights.
 
-## Future Enhancements
-- Additional language support and advanced problem types.
-- Enhanced analytics and machine learning integration for personalized feedback.
-- Security: Sandboxing to prevent malicious code execution.
-- Time-bound challenges with live leaderboards.
+
 - Moderation tools for administrators.
 
 ---
