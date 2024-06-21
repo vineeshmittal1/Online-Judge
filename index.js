@@ -50,6 +50,38 @@ app.post("/register", async (req, res) => {
     }
 });
 
+app.post("/login",async (req,res) =>{
+     try{
+           const {email,password}=req.body;
+           if(!(email&& password)) return res.status(400).send("Please provide both email and password");
+
+           const user= await User.findOne({email});
+           if(!user) return res.status(400).send("Invalid email or password");
+
+           const isPasswordValid = bcrypt.compareSync(password, user.password);
+           if (!isPasswordValid) {
+               return res.status(400).send("Invalid email or password");
+           }
+           const token = jwt.sign({ id: user._id, email }, process.env.SECRET_KEY, {
+               expiresIn: "1h"
+           });
+           user.token = token;
+           user.password = undefined;
+   
+           res.status(200).json({
+               message: "You have successfully logged in",
+               success: true,
+               user
+           });
+     }
+     catch(error){
+        console.log(error);
+        res.status(500).send("Internal Server Error");
+     }
+});
+
+
+
 app.listen(8000, () => {
     console.log("Server is listening on port 8000");
 });
